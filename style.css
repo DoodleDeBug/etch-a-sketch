@@ -3,10 +3,16 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-image: url(./pixels.png);
+  padding: 0 300px;
+}
 main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: white;
 }
 
 h1 {
