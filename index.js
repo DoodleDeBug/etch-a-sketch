@@ -37,6 +37,16 @@ function Grey() {
   }
 }
 
+function Multi() {
+  for (let j = 0; j < divs.length; j++) {
+    divs[j].addEventListener("mouseenter", function (e) {
+      let c1 = Math.floor(Math.random() * nums.length);
+      let c2 = Math.floor(Math.random() * nums.length);
+      let c3 = Math.floor(Math.random() * nums.length);
+      e.target.style.backgroundColor = `rgb(${c1},${c2},${c3})`;
+    });
+  }
+}
 function Rubber() {
   for (let j = 0; j < divs.length; j++) {
     divs[j].addEventListener("mouseenter", function (e) {
@@ -45,6 +55,15 @@ function Rubber() {
   }
 }
 
+function Clear() {
+  for (let j = 0; j < divs.length; j++) {
+    divs[j].style.backgroundColor = "white";
+  }
+}
+
 mono.addEventListener("click", Mono);
 grey.addEventListener("click", Grey);
+multi.addEventListener("click", Multi);
 rubber.addEventListener("click", Rubber);
+// resize.addEventListener("click", Resize);
+clear.addEventListener("click", Clear);
