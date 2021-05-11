@@ -30,8 +30,8 @@ h1 {
   align-items: center;
   border: 5px solid rgb(0, 0, 0);
   background-color: white;
-  min-width: 687px;
-  max-width: 687px;
+  width: 687px;
+  height: 687px;
 }
 
 .square {
