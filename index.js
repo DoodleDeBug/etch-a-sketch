@@ -4,8 +4,9 @@ const mono = document.getElementById("mono");
 const grey = document.getElementById("grey");
 const multi = document.getElementById("multi");
 const rubber = document.getElementById("rubber");
-const resize = document.getElementById("resize");
+const shade = document.getElementById("shade");
 const clear = document.getElementById("clear");
+const resize = document.getElementById("resize");
 
 //make initial grid
 for (let i = 0; i < 256; i++) {
@@ -65,5 +66,6 @@ mono.addEventListener("click", Mono);
 grey.addEventListener("click", Grey);
 multi.addEventListener("click", Multi);
 rubber.addEventListener("click", Rubber);
-// resize.addEventListener("click", Resize);
+// shade.addEventListener("click", Shade);
 clear.addEventListener("click", Clear);
+// resize.addEventListener("click", Resize);
