@@ -11,9 +11,16 @@ const resize = document.getElementById("resize");
 //make initial grid
 let size = 16;
 
-for (let i = 0; i < 256; i++) {
-  container.innerHTML += '<div class="square"></div>';
+function makeGrid(size) {
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  for (let i = 0; i < size * size; i++) {
+    const div = document.createElement("div");
+    div.classList = "square";
+    container.appendChild(div);
+  }
 }
+
+makeGrid(size);
 
 const divs = document.querySelectorAll(".square");
 
@@ -60,11 +67,12 @@ function Clear() {
 }
 
 // function Resize() {
-//  size = prompt("Choose a grid size (between 1-100)", 16);
-
-//   for (let j = 0; j < divs.length; j++) {
-//     divs[j].style.backgroundColor = "white";
+//   size = prompt("Choose a grid size (between 1-100)", 16);
+//   for (let i = 0; i < size * size; i++) {
+//     container.removeChild(divs[i]);
 //   }
+
+//   makeGrid(size);
 // }
 
 Mono();
