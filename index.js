@@ -30,6 +30,7 @@ function Mono() {
       e.target.style.backgroundColor = "black";
     });
   }
+  mono.classList.add("glow");
 }
 
 function Grey() {
