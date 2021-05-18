@@ -81,16 +81,14 @@ function Clear() {
 
 function Resize() {
   size = prompt("Choose a grid size (between 1-64)", 16);
-  container.innerHTML = "";
+
   if (size < 1 || size > 64) {
     alert("You must choose a number between 1 and 64");
-    makeGrid(16);
-    fillGrid(16);
+    Clear();
     return;
   }
+  container.innerHTML = "";
   divs = [];
-
   makeGrid(size);
-
   divs = document.querySelectorAll(".square");
 }
