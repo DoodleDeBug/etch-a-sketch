@@ -21,16 +21,15 @@ resize.addEventListener("click", Resize);
 let size = 16;
 
 makeGrid(size);
-fillGrid(size);
-const divs = document.querySelectorAll(".square");
+
+let divs = document.querySelectorAll(".square");
+
 //run mono on load
 Mono();
 
 function makeGrid(size) {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-}
 
-function fillGrid(size) {
   for (let i = 0; i < size * size; i++) {
     const div = document.createElement("div");
     div.classList = "square";
@@ -39,13 +38,11 @@ function fillGrid(size) {
 }
 
 function Mono() {
-  console.log("black");
   for (let j = 0; j < divs.length; j++) {
     divs[j].addEventListener("mouseenter", function (e) {
       e.target.style.backgroundColor = "black";
     });
   }
-  console.log("black 2");
 }
 
 function Grey() {
@@ -91,7 +88,9 @@ function Resize() {
     fillGrid(16);
     return;
   }
+  divs = [];
 
   makeGrid(size);
-  fillGrid(size);
+
+  divs = document.querySelectorAll(".square");
 }
