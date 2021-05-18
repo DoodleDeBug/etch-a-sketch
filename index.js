@@ -8,11 +8,29 @@ const shade = document.getElementById("shade");
 const clear = document.getElementById("clear");
 const resize = document.getElementById("resize");
 
+// add function to buttons
+mono.addEventListener("click", Mono);
+grey.addEventListener("click", Grey);
+multi.addEventListener("click", Multi);
+rubber.addEventListener("click", Rubber);
+// shade.addEventListener("click", Shade);
+clear.addEventListener("click", Clear);
+resize.addEventListener("click", Resize);
+
 //make initial grid
 let size = 16;
 
+makeGrid(size);
+fillGrid(size);
+const divs = document.querySelectorAll(".square");
+//run mono on load
+Mono();
+
 function makeGrid(size) {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+}
+
+function fillGrid(size) {
   for (let i = 0; i < size * size; i++) {
     const div = document.createElement("div");
     div.classList = "square";
@@ -20,17 +38,14 @@ function makeGrid(size) {
   }
 }
 
-makeGrid(size);
-
-const divs = document.querySelectorAll(".square");
-
 function Mono() {
+  console.log("black");
   for (let j = 0; j < divs.length; j++) {
     divs[j].addEventListener("mouseenter", function (e) {
       e.target.style.backgroundColor = "black";
     });
   }
-  mono.classList.add("glow");
+  console.log("black 2");
 }
 
 function Grey() {
@@ -67,20 +82,16 @@ function Clear() {
   }
 }
 
-// function Resize() {
-//   size = prompt("Choose a grid size (between 1-100)", 16);
-//   for (let i = 0; i < size * size; i++) {
-//     container.removeChild(divs[i]);
-//   }
+function Resize() {
+  size = prompt("Choose a grid size (between 1-64)", 16);
+  container.innerHTML = "";
+  if (size < 1 || size > 64) {
+    alert("You must choose a number between 1 and 64");
+    makeGrid(16);
+    fillGrid(16);
+    return;
+  }
 
-//   makeGrid(size);
-// }
-
-Mono();
-mono.addEventListener("click", Mono);
-grey.addEventListener("click", Grey);
-multi.addEventListener("click", Multi);
-rubber.addEventListener("click", Rubber);
-// shade.addEventListener("click", Shade);
-clear.addEventListener("click", Clear);
-// resize.addEventListener("click", Resize);
+  makeGrid(size);
+  fillGrid(size);
+}
