@@ -4,7 +4,6 @@ const mono = document.getElementById("mono");
 const grey = document.getElementById("grey");
 const multi = document.getElementById("multi");
 const rubber = document.getElementById("rubber");
-const shade = document.getElementById("shade");
 const clear = document.getElementById("clear");
 const resize = document.getElementById("resize");
 
@@ -13,7 +12,6 @@ mono.addEventListener("click", Mono);
 grey.addEventListener("click", Grey);
 multi.addEventListener("click", Multi);
 rubber.addEventListener("click", Rubber);
-// shade.addEventListener("click", Shade);
 clear.addEventListener("click", Clear);
 resize.addEventListener("click", Resize);
 
