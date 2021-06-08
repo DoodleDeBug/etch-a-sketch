@@ -1,4 +1,4 @@
-html {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,10 +17,12 @@ main {
 }
 
 h1 {
+  margin: 1rem;
   text-align: center;
   font-size: 50px;
   align-self: center;
   font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
 }
 
 #container {
@@ -41,8 +43,6 @@ h1 {
   justify-content: space-around;
   padding: 10px;
   margin-left: 3em;
-  /* position: absolute; */
-  /* transform: translateX(35em); */
 }
 
 .btn {
@@ -52,7 +52,7 @@ h1 {
     rgb(81, 172, 214)
   );
 
-  padding: 20px 30px;
+  padding: 30px 80px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 25px;
@@ -84,11 +84,12 @@ h1 {
 
   .options {
     margin: 0;
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-around;
-    padding: 10px;
+    gap: 25px;
+    justify-content: center;
+    padding: 10px 2rem;
   }
 }
